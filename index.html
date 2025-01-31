@@ -8,19 +8,19 @@
 </head>
 <body>
     <nav class="bg-blue-600 p-4 shadow-lg">
-        <div class="container mx-auto flex justify-between items-center">
+        <div class="container flex justify-between items-center">
             <a href="index.html" class="sm:hidden text-white text-xl font-bold">IDIVIPL</a>
-            <a href="index.html" class="hidden text-white text-xl font-bold sm:block">INTELLIGENT DOTS IT VISION INDIA PRIVTE LIMITED</a>
+            <a href="index.html" class="hidden text-white sm:ml-10 text-xl font-bold sm:block">INTELLIGENT DOTS IT VISION INDIA PRIVTE LIMITED</a>
             
             <!-- Desktop Menu -->
-            <div class="hidden md:flex space-x-6">
-                <a href="#" class="text-white hover:text-gray-300">Home</a>
-                <a href="view_entries.php" class="text-white hover:text-gray-300">Database</a>
+            <div class="hidden sm:flex space-x-10 font-bold">
+                <a href="#" class="text-white text-lg hover:text-gray-300">Home</a>
+                <a href="view_entries.php" class="text-white text-lg hover:text-gray-300">Database</a>
 
             </div>
             
             <!-- Mobile Menu Button -->
-            <button id="menu-button" class="md:hidden text-white">
+            <button id="menu-button" class="md:hidden text-white text-2xl">
                 ☰
             </button>
         </div>
@@ -34,21 +34,21 @@
     </nav>
 
     <!-- Form -->
-    <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg mx-auto">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg mx-auto mt-6">
         <h2 class="text-2xl font-bold text-center mb-4">Dairy <span class="text-blue-500">Database</span></h2>
         <form action="submit.php" method="POST">
             <div class="mb-4">
                 <label for="fycode" class="block text-gray-700 font-medium">FY Code</label>
-                <input type="text" name="fycode" class="w-full p-2 border border-gray-300 rounded mt-1 focus:ring-2 focus:ring-blue-500"
-                       maxlength="4">
+                <input title="fycode" placeholder="Enter Code" type="text" name="fycode" class="w-full p-2 border border-gray-300 rounded mt-1 focus:ring-2 focus:ring-blue-500"
+                       maxlength="4" required>
             </div>
             <div class="mb-4">
                 <label for="edno" class="block text-gray-700 font-medium">ED Number</label>
-                <input type="number" name="edno" maxlength="" class="w-full p-2 border border-gray-300 rounded mt-1 focus:ring-2 focus:ring-blue-500">
+                <input title="edno" placeholder="Enter Code Number" type="text" name="edno" maxlength="" class="w-full p-2 border border-gray-300 rounded mt-1 focus:ring-2 focus:ring-blue-500" required>
             </div>
             <div class="mb-4">
                 <label for="paidby" class="block text-gray-700 font-medium">Paid By</label>
-                <select name="paidby" class="w-full p-2 border border-gray-300 rounded mt-1 focus:ring-2 focus:ring-blue-500">
+                <select title="paidby" name="paidby" class="w-full p-2 border border-gray-300 rounded mt-1 focus:ring-2 focus:ring-blue-500" required>
                     <option value="">Select</option>
                     <option value="credit_card">Credit Card</option>
                     <option value="paypal">PayPal</option>
@@ -57,7 +57,7 @@
             </div>
             <div class="mb-4">
                 <label for="amount" class="block text-gray-700 font-medium">Amount</label>
-                <input type="number" name="amount" class="w-full p-2 border border-gray-300 rounded mt-1 focus:ring-2 focus:ring-blue-500">
+                <input title="amount" placeholder="Enter Amount" type="number" name="amount" class="w-full p-2 border border-gray-300 rounded mt-1 focus:ring-2 focus:ring-blue-500" required>
             </div>
             <div class="mb-4">
                 <label for="paid_date" class="block text-gray-700 font-medium">Paid Date</label>
