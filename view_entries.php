@@ -65,7 +65,7 @@ $paidby_result = $conn->query($paidby_query);
             <a href="index.php" class="hidden text-white sm:ml-10 text-xl font-bold sm:block">INTELLIGENT DOTS IT VISION INDIA PRIVTE LIMITED</a>
             
             <!-- Desktop Menu -->
-            <div class="hidden sm:flex space-x-10 font-bold">
+            <div class="hidden sm:flex space-x-10 font-bold right-0">
                 <a href="index.php" class="text-white text-lg hover:text-gray-300"><i class="fa-solid fa-house"></i>
                 Home</a>
             </div>
@@ -85,7 +85,7 @@ $paidby_result = $conn->query($paidby_query);
 
 <!-- Main Content -->
 <div class="container mx-auto px-4">
-    <h2 class="text-2xl sm:text-3xl font-bold text-center mt-10 mb-6 text-gray-700">Dairy Software Registration</h2>
+    <h2 class="text-2xl sm:text-3xl font-bold text-center mt-10 mb-6 text-gray-700">Dairy <span class="text-blue-500">Software</span> Registration</h2>
 
     <!-- Total Amount & Societies -->
     <div class="mb-6 text-left">
@@ -135,7 +135,7 @@ $paidby_result = $conn->query($paidby_query);
 
             <!-- Submit & Reset Buttons -->
             <div class="flex items-end">
-                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-800">Apply</button>
+                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-800">Filter</button>
                 <a href="view_entries.php" class="ml-4 bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-700">Reset</a>
             </div>
         </div>
@@ -163,8 +163,8 @@ $paidby_result = $conn->query($paidby_query);
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr class='border-t hover:bg-blue-400 odd:bg-white even:bg-gray-100'>
                         <td class='px-4 py-3 flex space-x-2'>
-                            <a href='edit_entry.php?id=" . $row['id'] . "' class='bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600'>Edit</a>
-                            <a href='delete_entry.php?id=" . $row['id'] . "' class='bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600' onclick='return confirm(\"Are you sure?\");'>Delete</a>
+                            <a href='edit_entry.php?id=" . $row['id'] . "' class='bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600'><i class='fas fa-pencil-alt'></i></a>
+                            <a href='delete_entry.php?id=" . $row['id'] . "' class='bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600' onclick='return confirm(\"Are you sure?\");'><i class='fas fa-trash'></i></a>
                         </td>
                         <td class='px-4 py-3'>" . $counter++ . "</td>
                         <td class='px-4 py-3'>" . $row['fycode'] . "</td>
@@ -179,5 +179,16 @@ $paidby_result = $conn->query($paidby_query);
         </table>
     </div>
 </div>
+
+<!-- Mobile Navbar -->
+<script>
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
 </body>
 </html>

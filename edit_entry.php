@@ -72,9 +72,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="mb-4">
                 <label class="block text-gray-700 font-medium">Paid By</label>
                 <select name="paidby" class="w-full p-2 border border-gray-300 rounded mt-1" required>
-                    <option value="New" <?php if ($row['paidby'] == "Credit Card") echo "selected"; ?>>New</option>
-                    <option value="ReNewal" <?php if ($row['paidby'] == "Debit Card") echo "selected"; ?>>ReNewal</option>
-                    <option value="Per Call" <?php if ($row['paidby'] == "Bank Transfer") echo "selected"; ?>>Per Call</option>
+                    <option value="New Register" <?php if ($row['paidby'] == "New Register") echo "selected"; ?>>New</option>
+                    <option value="ReNewal" <?php if ($row['paidby'] == "ReNewal") echo "selected"; ?>>ReNewal</option>
+                    <option value="Per Call" <?php if ($row['paidby'] == "Per Call") echo "selected"; ?>>Per Call</option>
                 </select>
             </div>
 

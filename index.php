@@ -15,7 +15,7 @@ include "includes.php";
             <a href="index.php" class="hidden text-white sm:ml-10 text-xl font-bold sm:block">INTELLIGENT DOTS IT VISION INDIA PRIVTE LIMITED</a>
             
             <!-- Desktop Menu -->
-            <div class="hidden sm:flex space-x-10 font-bold">
+            <div class="hidden sm:flex space-x-10 font-bold right-0">
                 <a href="view_entries.php" class="text-white text-lg hover:text-gray-300"><i class="fa-solid fa-database"></i>
                     Database</a>
             </div>
@@ -34,7 +34,7 @@ include "includes.php";
     </nav>
 
     <!-- Form -->
-    <div class="bg-white p-4 rounded-lg shadow-lg w-full max-w-lg mx-auto">
+    <div class="bg-white p-4 rounded-lg shadow-lg w-full max-w-lg mx-auto mt-4">
         <h2 class="text-2xl font-bold text-center mb-4">Dairy <span class="text-blue-500">Software</span> Registration</h2>
 
         <!-- Display Result Message if Any -->
