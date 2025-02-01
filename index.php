@@ -1,22 +1,23 @@
+<?php
+include "includes.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IDIVIPL</title>
-    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <nav class="bg-blue-600 p-4 shadow-lg">
+<body class="bg-gray-200">
+    <nav class="bg-blue-400 p-4 shadow-lg">
         <div class="container flex justify-between items-center">
-            <a href="index.html" class="sm:hidden text-white text-xl font-bold">IDIVIPL</a>
-            <a href="index.html" class="hidden text-white sm:ml-10 text-xl font-bold sm:block">INTELLIGENT DOTS IT VISION INDIA PRIVTE LIMITED</a>
+            <a href="index.php" class="sm:hidden text-white text-xl font-bold">IDIVIPL</a>
+            <a href="index.php" class="hidden text-white sm:ml-10 text-xl font-bold sm:block">INTELLIGENT DOTS IT VISION INDIA PRIVTE LIMITED</a>
             
             <!-- Desktop Menu -->
             <div class="hidden sm:flex space-x-10 font-bold">
-                <a href="#" class="text-white text-lg hover:text-gray-300">Home</a>
-                <a href="view_entries.php" class="text-white text-lg hover:text-gray-300">Database</a>
-
+                <a href="view_entries.php" class="text-white text-lg hover:text-gray-300"><i class="fa-solid fa-database"></i>
+                    Database</a>
             </div>
             
             <!-- Mobile Menu Button -->
@@ -27,32 +28,35 @@
         
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden flex flex-col py-4 space-y-4">
-            <a href="#" class="text-white text-center py-2 hover:bg-blue-800">Home</a>
-            <a href="view_entries.php" class="text-white text-center py-2 hover:bg-blue-800">Database</a>
-
+            <a href="view_entries.php" class="text-white py-2 text-lg text-center hover:bg-blue-800"><i class="fa-solid fa-database"></i>
+                Database</a>
         </div>
     </nav>
 
     <!-- Form -->
-    <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg mx-auto mt-6">
-        <h2 class="text-2xl font-bold text-center mb-4">Dairy <span class="text-blue-500">Database</span></h2>
+    <div class="bg-white p-4 rounded-lg shadow-lg w-full max-w-lg mx-auto">
+        <h2 class="text-2xl font-bold text-center mb-4">Dairy <span class="text-blue-500">Software</span> Registration</h2>
+
+        <!-- Display Result Message if Any -->
+        <?php if (isset($message)) echo $message; ?>
+
         <form action="submit.php" method="POST">
             <div class="mb-4">
                 <label for="fycode" class="block text-gray-700 font-medium">FY Code</label>
-                <input title="fycode" placeholder="Enter Code" type="text" name="fycode" class="w-full p-2 border border-gray-300 rounded mt-1 focus:ring-2 focus:ring-blue-500"
-                       maxlength="4" required>
+                <input title="fycode" placeholder="Enter Code" type="text" id="fycode" name="fycode" class="w-full p-2 border border-gray-300 rounded mt-1 bg-gray-200 cursor-not-allowed"
+                       maxlength="4" readonly>
             </div>
             <div class="mb-4">
-                <label for="edno" class="block text-gray-700 font-medium">ED Number</label>
+                <label for="edno" class="block text-gray-700 font-medium">Society Number</label>
                 <input title="edno" placeholder="Enter Code Number" type="text" name="edno" maxlength="" class="w-full p-2 border border-gray-300 rounded mt-1 focus:ring-2 focus:ring-blue-500" required>
             </div>
             <div class="mb-4">
                 <label for="paidby" class="block text-gray-700 font-medium">Paid By</label>
                 <select title="paidby" name="paidby" class="w-full p-2 border border-gray-300 rounded mt-1 focus:ring-2 focus:ring-blue-500" required>
-                    <option value="">Select</option>
-                    <option value="credit_card">Credit Card</option>
-                    <option value="paypal">PayPal</option>
-                    <option value="bank_transfer">Bank Transfer</option>
+                    <option value="0">Select</option>
+                    <option value="New Register">New</option>
+                    <option value="ReNewal">ReNewal</option>
+                    <option value="Per Call">Per Call</option>
                 </select>
             </div>
             <div class="mb-4">
@@ -64,7 +68,7 @@
                 <input type="text" name="paid_date" id="paid_date" class="w-full p-2 border border-gray-300 rounded mt-1 bg-gray-200 cursor-not-allowed" readonly>
             </div>
             
-            <button type="submit" class="w-1/2 block mx-auto bg-blue-600 text-white p-2 rounded hover:bg-blue-700">Save</button>
+            <button type="submit" class="w-1/2 block mx-auto bg-green-400 text-white p-2 rounded hover:bg-blue-700">Save</button>
         </form>
     </div>
 
@@ -81,6 +85,11 @@
     <!-- For Paid Date & Time Fetching -->
     <script>
         document.getElementById('paid_date').value = new Date().toLocaleString();
+    </script>
+
+    <!-- For Getting Year -->
+    <script>
+        document.getElementById('fycode').value = new Date().getFullYear();
     </script>
 
 </body>
