@@ -59,29 +59,39 @@ $paidby_result = $conn->query($paidby_query);
 <body class="bg-gray-200">
 
 <!-- Navigation Bar -->
-<nav class="bg-blue-400 p-4 shadow-lg">
+<nav class="bg-blue-500 shadow-lg py-4 sm:py-0">
         <div class="container flex justify-between items-center">
-            <a href="index.php" class="sm:hidden text-white text-xl font-bold">IDIVIPL</a>
-            <a href="index.php" class="hidden text-white sm:ml-10 text-xl font-bold sm:block">INTELLIGENT DOTS IT VISION INDIA PRIVTE LIMITED</a>
-            
+            <!-- Logo Section -->
+            <div class="flex items-center space-x-3">
+                <img src="./assets/Logo.png" alt="Company Logo" class="h-12 w-16 sm:h-20 sm:w-24 ml-4">
+                <a href="index.php" class="sm:hidden text-white text-xl font-bold">IDIVIPL</a>
+                <a href="index.php" class="hidden text-white sm:ml-2 text-xl font-bold sm:block">
+                    INTELLIGENT DOTS IT VISION INDIA PRIVATE LIMITED
+                </a>
+            </div>
+
             <!-- Desktop Menu -->
             <div class="hidden sm:flex space-x-10 font-bold right-0">
-                <a href="index.php" class="text-white text-lg hover:text-gray-300"><i class="fa-solid fa-house"></i>
-                Home</a>
+                <a href="index.php" class="text-white text-xl hover:text-gray-300">
+                <i class="fa-solid fa-house"></i>
+                Home
+                </a>
             </div>
-            
+
             <!-- Mobile Menu Button -->
-            <button id="menu-button" class="md:hidden text-white text-2xl">
+            <button id="menu-button" class="md:hidden text-white text-2xl mr-6">
                 ☰
             </button>
         </div>
-        
+
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden flex flex-col py-4 space-y-4">
-            <a href="index.php" class="text-white py-2 text-lg text-center hover:bg-blue-800"><i class="fa-solid fa-house"></i>
-            Home</a>
+            <a href="index.php" class="text-white py-2 text-lg text-center hover:bg-blue-800">
+            <i class="fa-solid fa-house"></i>
+            Home
+            </a>
         </div>
-</nav>
+    </nav>
 
 <!-- Main Content -->
 <div class="container mx-auto px-4">
@@ -89,10 +99,10 @@ $paidby_result = $conn->query($paidby_query);
 
     <!-- Total Amount & Societies -->
     <div class="mb-6 text-left">
-        <p class="text-xl font-semibold text-gray-600">Total Amount: 
+        <p class="text-xl font-semibold text-gray-600">Total Amount : <i class="fa-solid fa-indian-rupee-sign"></i>
             <span class="font-bold text-blue-600"><?php echo number_format($total_amount, 2); ?></span>
         </p>
-        <p class="text-xl font-semibold text-gray-600">Total Societies: 
+        <p class="text-xl font-semibold text-gray-600">Total Societies : 
             <span class="font-bold text-blue-600"><?php echo $total_society; ?></span>
         </p>
     </div>
@@ -103,7 +113,7 @@ $paidby_result = $conn->query($paidby_query);
             <!-- FY Code Filter -->
             <div>
                 <label class="text-gray-600 font-semibold">Filter by FY Code:</label>
-                <select name="fycode" class="w-full p-2 border border-gray-300 rounded-lg">
+                <select name="fycode" class="w-full sm:w-1/2 p-2 border border-gray-300 rounded-lg">
                     <option value="">All</option>
                     <?php while ($fycode_row = $fycode_result->fetch_assoc()) { ?>
                         <option value="<?php echo $fycode_row['fycode']; ?>" <?php if ($filter_fycode == $fycode_row['fycode']) echo 'selected'; ?>>
@@ -116,7 +126,7 @@ $paidby_result = $conn->query($paidby_query);
             <!-- Paid By Filter -->
             <div>
                 <label class="text-gray-600 font-semibold">Filter by Paid By:</label>
-                <select name="paidby" class="w-full p-2 border border-gray-300 rounded-lg">
+                <select name="paidby" class="w-full sm:w-1/2 p-2 border border-gray-300 rounded-lg">
                     <option value="">All</option>
                     <?php while ($paidby_row = $paidby_result->fetch_assoc()) { ?>
                         <option value="<?php echo $paidby_row['paidby']; ?>" <?php if ($filter_paidby == $paidby_row['paidby']) echo 'selected'; ?>>
@@ -128,9 +138,9 @@ $paidby_result = $conn->query($paidby_query);
 
             <!-- Search ED Number -->
             <div>
-                <label class="text-gray-600 font-semibold">Search by ED Number:</label>
+                <label class="text-gray-600 font-semibold">Search By No:</label>
                 <input type="text" name="search_edno" value="<?php echo htmlspecialchars($search_edno); ?>" 
-                    class="w-full p-2 border border-gray-300 rounded-lg" placeholder="Enter ED Number">
+                    class="w-full sm:w-1/2 p-2 border border-gray-300 rounded-lg" placeholder="Enter Number">
             </div>
 
             <!-- Submit & Reset Buttons -->
@@ -144,7 +154,7 @@ $paidby_result = $conn->query($paidby_query);
     <!-- Responsive Table -->
     <div class="overflow-x-auto">
         <table class="w-full table-auto border-collapse shadow-lg rounded-lg overflow-hidden">
-            <thead class="bg-green-400 text-white text-md sm:text-lg">
+            <thead class="bg-blue-400 text-white text-md sm:text-lg">
                 <tr>
                     <th class="px-4 py-3 text-center"></th>
                     <th class="px-4 py-3 text-left">S.No</th>
@@ -161,8 +171,8 @@ $paidby_result = $conn->query($paidby_query);
                 $result->data_seek(0);
 
                 while ($row = $result->fetch_assoc()) {
-                    echo "<tr class='border-t hover:bg-blue-400 odd:bg-white even:bg-gray-100'>
-                        <td class='px-4 py-3 flex space-x-2'>
+                    echo "<tr class='border-t hover:bg-gray-300 odd:bg-white even:bg-gray-100'>
+                        <td class='px-4 py-3 flex space-x-4'>
                             <a href='edit_entry.php?id=" . $row['id'] . "' class='bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600'><i class='fas fa-pencil-alt'></i></a>
                             <a href='delete_entry.php?id=" . $row['id'] . "' class='bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600' onclick='return confirm(\"Are you sure?\");'><i class='fas fa-trash'></i></a>
                         </td>

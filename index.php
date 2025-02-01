@@ -9,29 +9,38 @@ include "includes.php";
     <title>IDIVIPL</title>
 </head>
 <body class="bg-gray-200">
-    <nav class="bg-blue-400 p-4 shadow-lg">
+    <nav class="bg-blue-500 shadow-lg py-4 sm:py-0">
         <div class="container flex justify-between items-center">
-            <a href="index.php" class="sm:hidden text-white text-xl font-bold">IDIVIPL</a>
-            <a href="index.php" class="hidden text-white sm:ml-10 text-xl font-bold sm:block">INTELLIGENT DOTS IT VISION INDIA PRIVTE LIMITED</a>
-            
+            <!-- Logo Section -->
+            <div class="flex items-center space-x-3">
+                <img src="./assets/Logo.png" alt="Company Logo" class="h-12 w-16 sm:h-20 sm:w-24 ml-4">
+                <a href="index.php" class="sm:hidden text-white text-xl font-bold">IDIVIPL</a>
+                <a href="index.php" class="hidden text-white sm:ml-2 text-xl font-bold sm:block">
+                    INTELLIGENT DOTS IT VISION INDIA PRIVATE LIMITED
+                </a>
+            </div>
+
             <!-- Desktop Menu -->
             <div class="hidden sm:flex space-x-10 font-bold right-0">
-                <a href="view_entries.php" class="text-white text-lg hover:text-gray-300"><i class="fa-solid fa-database"></i>
-                    Database</a>
+                <a href="view_entries.php" class="text-white text-xl hover:text-gray-300">
+                    <i class="fa-solid fa-database"></i> Database
+                </a>
             </div>
-            
+
             <!-- Mobile Menu Button -->
-            <button id="menu-button" class="md:hidden text-white text-2xl">
+            <button id="menu-button" class="md:hidden text-white text-2xl mr-6">
                 ☰
             </button>
         </div>
-        
+
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden flex flex-col py-4 space-y-4">
-            <a href="view_entries.php" class="text-white py-2 text-lg text-center hover:bg-blue-800"><i class="fa-solid fa-database"></i>
-                Database</a>
+            <a href="view_entries.php" class="text-white py-2 text-lg text-center hover:bg-blue-800">
+                <i class="fa-solid fa-database"></i> Database
+            </a>
         </div>
     </nav>
+
 
     <!-- Form -->
     <div class="bg-white p-4 rounded-lg shadow-lg w-full max-w-lg mx-auto mt-4">
